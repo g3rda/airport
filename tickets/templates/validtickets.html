@@ -1,0 +1,41 @@
+
+
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+
+{% load staticfiles %}
+
+</br>
+
+<body>
+<link rel="stylesheet" href="{% static 'css3/style.css' %}" type="text/css" media="all">
+    <table style="width:80%">
+      <thead>
+    <tr>
+      <th>Departure Date</th>
+      <th>Gate</th>
+      <th>Flight</th>
+      <th>Passenger</th>
+      <th>Travel class</th>
+      <th>Price</th>
+    </tr>
+  </thead>
+      <tbody>
+      {% for t in tickets %} 
+      <tr>
+        <td>  {{ t.flightID.departureDate }} {{ t.flightID.depatureTime }} </td>
+        <td>   {{ t.flightID.gate }} </td>
+        <td>   {{ t.flightID.departureFrom }} - {{ t.flightID.destination}} </td>
+        <td>   {{ t.passenger}} </td>
+        <td>   {{ t.travelClass}} </td>
+        <td>   {{ t.price}} </td>
+      </tr>
+      {% endfor %} 
+      </tbody>       
+    </table>
+</body>
+
+{% endblock %}

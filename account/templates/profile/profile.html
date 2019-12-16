@@ -1,0 +1,54 @@
+{% extends 'base1.html' %}
+
+{% block title %}Profile{% endblock %}
+
+{% block content %}
+
+{% load staticfiles %}
+
+<link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">
+  <link type="text/css" rel="stylesheet" href="{% static 'css1/style.css' %}" />
+<body>
+<div id="booking" class="section">
+    <div class="section-center">
+      <div class="container">
+        <div class="row">
+          
+          <div class="col-md-7 col-md-offset-1">
+            <div class="booking-form">
+              
+                
+                
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <p class="form-label" style="text-align: center"> Hello, {{ request.user.username }}</p>
+                      <p class="form-label" style="text-align: center"> Your email: {{ request.user.email }}</p>
+                      <p class="form-label" style="text-align: center"> Your full name: {{ request.user.first_name }} {{ request.user.last_name }}</p>
+                      
+                    </div>
+                  </div>
+                </div>
+                
+                
+               <div >
+                	<p><a href="/account/password_change"><button class="submit-btn">Change password</button></a></p>
+                  <p><a href="/account/password_reset"><button class="submit-btn">Reset password</button></a></p>
+    <p><a href="/showhistory/"><button class="submit-btn">Show your tickets</button></a></p>
+    <p><a href="/validtickets/"><button class="submit-btn">Valid tickets</button></a></p>
+                </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+    
+</body>
+
+
+{% endblock %}

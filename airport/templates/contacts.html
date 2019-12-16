@@ -1,0 +1,57 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+{% load staticfiles %}
+<script src="https://smtpjs.com/v3/smtp.js">
+</script>
+<div class="main">
+  <section id="content">
+    <article class="col1">
+      <div class="pad_1">
+        <h2>Contact Us</h2>
+        <span class="cols"> Country:Ukraine<br>
+        City: Kyiv<br>
+        Telephone:+380984950960<br>
+        Email:fri3d.gr33n.t0m4t0es@gmail.com </span> <br>
+        Grovo Dage<br>
+        +380 5635600<br>
+        <a href="#">ervine.info@mail.com</a>
+        <h2>Contact Info</h2>
+        <p>Our business is built on our people. We go beyond exceptional every day. Together, we're shaping the future of Kyiv. And this is where creating amazing customer experiences means an unrivalled career for you.
+        If you have any propositions or want to work in the airport, please, fullfill our contact form.
+        </p>
+      </div>
+    </article>
+    <article class="col2 pad_left1">
+      <h2>Contact Form</h2>
+      <form id="ContactForm" action="#" onsubmit="myFunction()">
+        <div>
+          <div class="wrapper">
+            <div class="bg">
+              <input id="name" type="text" class="input" />
+            </div>
+            Your Name:<br />
+          </div>
+          <div class="wrapper">
+            <div class="bg">
+              <input id="email" type="text" class="input" />
+            </div>
+            Your E-mail:<br />
+          </div>
+          <div class="wrapper">
+            <div class="bg">
+              <textarea id="message" name="textarea" cols="1" rows="1"></textarea>
+            </div>
+            Your Message:<br />
+          </div>
+          <a href="#" class="button1"><button type="reset">reset</button> </a> <a href="#" type="reset"class="button1"><button id="submitbutton" type="submit">submit</button> </a> </div>
+      </form>
+    </article>
+  </section>
+</div>
+<!-- END PAGE SOURCE -->
+</body>
+</html>
+ <script type="text/javascript" src="{% static 'js1/contact.js' %}"></script> 
+{% endblock %}

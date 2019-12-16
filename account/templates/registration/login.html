@@ -1,0 +1,43 @@
+
+{% extends 'base.html' %}
+{% block content %}
+{% load staticfiles %}
+
+  <h2 style="text-align: center">Log in </h2>
+  
+
+<link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">
+<link type="text/css" rel="stylesheet" href="{% static 'css1/style.css' %}" />
+
+  <div class="col-md-7 col-md-offset-1">
+            <div class="booking-form">
+              <form method="post">
+                {% csrf_token %}
+    {% for field in form %}
+                <div class="row">
+                  <div class="col-md-6">
+                  <div class="form-group">
+                    <span class="form-label">{{ field.label_tag }}</span>
+                    <p style="border: 2px solid #191a1e; border-radius: 5px ">{{ field }}</p>
+                  </div>
+                  {% if field.help_text %}
+          <small style="color: grey">{{ field.help_text }}</small>{% endif %}{% for error in field.errors %}
+          <p style="color: red">{{ error }}</p>
+        {% endfor %}
+                </div>
+                </div>
+                {% endfor %}
+
+                  <div class="form-btn">
+                  <button type = "submit" class="submit-btn">Log in</div></button></div>
+
+                </form>
+              
+            </div>
+          </div>
+
+ <script type="text/javascript" src="{% static 'js1/prices.js' %}"></script>     
+       
+{% endblock %}
+
+

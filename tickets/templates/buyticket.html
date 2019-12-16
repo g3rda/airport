@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load staticfiles %}
+{% if request.user.is_authenticated %}
+  <h2 style="text-align: center">Book ticket for flight {{ flight.departureFrom }} - {{ flight.destination}} (ID={{flight.flight_id}}) which departures on {{ flight.departureDate }} {{ flight.depatureTime }}  </h2>
+  <form method="post">
+
+
+<link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">
+
+  
+  <!-- Custom stlylesheet -->
+  <link type="text/css" rel="stylesheet" href="{% static 'css1/style.css' %}" />
+
+  <div class="col-md-7 col-md-offset-1">
+            <div class="booking-form">
+              <form method="post">
+                {% csrf_token %}
+    {% for field in form %}
+                <div class="row">
+                  <div class="col-md-6">
+                  <div class="form-group">
+                    <span class="form-label">{{ field.label_tag }}</span>
+                    {{ field }}
+                  </div>
+                  {% if field.help_text %}
+          <small style="color: grey">{{ field.help_text }}</small>{% endif %}{% for error in field.errors %}
+          <p style="color: red">{{ error }}</p>
+        {% endfor %}
+                </div>
+                </div>
+                {% endfor %}
+
+                  <div class="form-btn">
+                  <button class="submit-btn">Book ticket</button>
+                </div>
+
+                </form>
+              
+            </div>
+          </div>
+
+ <script type="text/javascript" src="{% static 'js1/prices.js' %}"></script>     
+       {% else %}
+
+<h2 style="text-align: center">You can not book the ticket, please, <a href="{% url 'login' %}">log in</a></h2>
+
+       {%endif%}
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+
+{% load staticfiles %}
+
+<body>
+<link rel="stylesheet" href="{% static 'css3/style.css' %}" type="text/css" media="all">
+    <table>
+      <thead>
+    <tr>
+      <th>Departure Time</th>
+      <th>Gate</th>
+      <th>Destination</th></tr>
+  </thead>
+      <tbody>
+      {% for f in flights %} 
+      <tr>
+        <td>   {{ f.depatureTime }} </td>
+        <td>   {{ f.gate }} </td>
+        <td>   {{ f.destination}} </td>
+      </tr>
+      {% endfor %} 
+      </tbody>       
+    </table>
+</body>
+
+
+
+{% endblock %}

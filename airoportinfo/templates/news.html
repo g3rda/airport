@@ -1,0 +1,51 @@
+{% extends 'base1.html' %}
+
+{% block title %}Profile{% endblock %}
+
+{% block content %}
+
+{% load staticfiles %}
+<link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">
+  <link type="text/css" rel="stylesheet" href="{% static 'css1/style.css' %}" />
+<body>
+<div id="booking" class="section">
+    <div class="section-center">
+      <div class="container">
+        <div class="row">
+          
+          <div class="col-md-7 col-md-offset-1">
+            <div class="booking-form">
+              
+                
+                
+                <div class="row">
+                  <div ><p  style="text-align: center; font-size: 15px"> {{ news.title }}</p>
+                    <p style="text-align: center;"><img align="middle" width=500 src="{{ news.newsImage.url }}" /></p>
+                    <div class="form-group"></br>
+                      <p  style="text-align: center; font-size: 25px"> {{ news.text }}</p>
+
+                      
+                    </div>
+                      
+                  </div>
+                    
+
+                </div>
+                
+                
+               
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+    
+</body>
+
+
+{% endblock %}

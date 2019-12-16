@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+{% load staticfiles %}
+{% csrf_token %}
+
+<body>
+  
+<link rel="stylesheet" href="{% static 'css3/style.css' %}" type="text/css" media="all">
+    <table>
+      <thead>
+    <tr>
+      <th>ID</th>
+      <th>Flight</th>
+      <th>Departure Time</th>
+      <th>Arrival Time</th>
+      <th>Gate</th>
+  </tr>
+  </thead>
+      <tbody>
+      {% for f in flights %} 
+      <tr >
+        <td>   {{ f.flight_id }} </td>
+        <td>   <a href="/search/{{ f.flight_id }}/">{{ f.departureFrom }} - {{ f.destination}}</a></td>
+        <td>   {{ f.departureDate }} {{ f.depatureTime }} </td>
+        <td>   {{ f.arrivalDate }} {{ f.arrivalTime }} </td>
+        <td>   {{ f.gate }} </td>
+      </tr>
+      {% endfor %} 
+      </tbody>       
+    </table> </br>
+
+
+</body>
+
+
+{% endblock %}

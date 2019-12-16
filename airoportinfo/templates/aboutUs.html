@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+   
+
+{% load staticfiles %}
+<div class="main">
+  <section id="content">
+    <article class="col1">
+      <div class="pad_1">
+        <h2>Characteristics of airport</h2>
+        <span class="cols"> ID: 20A12Y01<br>
+        Coordinates: 25°15′10″N 055°21′52″E <br>
+        Amount of planes: 12<br>
+        Passengers:89149<br>
+        Economic impact: $26.7million</span><br>
+        
+        <h2>General Info</h2>
+        <p>Ervine airline is the main base of operations at the airport. The busiest route of Ervino is the "Air Bridge" connecting Ervino and Irveno and is the world's most frequented Air Bridge.Our terminal will have the capacity to accommodate 25 million passengers a year but for now, the project is stopped because the two existing terminals already cover existing demand for flights. </p>
+      </div>
+    </article>
+    <article class="col2 pad_left1">
+         <h3 style="text-align:center">Airport Ervine Map</h3>
+      <h2 id="ContactForm" action="#"> </h2>
+       <p><img width=600 src="{% static 'map.jpg' %}"></p>
+    </article>
+  </section>
+</div>
+<!-- END PAGE SOURCE -->
+</body>
+</html>
+{% endblock %}

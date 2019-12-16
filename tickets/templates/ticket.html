@@ -1,0 +1,49 @@
+{% extends 'base1.html' %}
+
+{% block title %}Profile{% endblock %}
+
+{% block content %}
+
+{% load staticfiles %}
+<link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">
+  <link type="text/css" rel="stylesheet" href="{% static 'css1/style.css' %}" />
+<body>
+<div id="booking" class="section">
+    <div class="section-center">
+      <div class="container">
+        <div class="row" style="padding-top: 20px;">
+          
+          <div class="col-md-7 col-md-offset-1">
+            <div class="booking-form">
+              <p  style="text-align: center; font-size: 15px"> Ticket ID: {{ ticket.ticket_id }}</p>
+    <p  style="text-align: center; font-size: 15px"> Flight ID: {{ ticket.flightID.flight_id }}</p>
+    <p  style="text-align: center; font-size: 15px"> Flight: {{ ticket.flightID.departureFrom }} - {{ ticket.flightID.destination}}</p>
+    <p  style="text-align: center; font-size: 15px"> Flight date: {{ ticket.flightID.departureDate }} {{ ticket.flightID.depatureTime }}</p>
+    <p  style="text-align: center; font-size: 15px"> Arrival time: {{ ticket.flightID.arrivalDate }} {{ ticket.flightID.arrivalTime }}</p>
+    <p  style="text-align: center; font-size: 15px"> Passenger: {{ ticket.passenger }}</p>
+    <p  style="text-align: center; font-size: 15px"> Travel class: {{ ticket.travelClass }}</p>
+    <p  style="text-align: center; font-size: 15px"> Booked Priority Line: {{ ticket.buyPrLine }}</p>
+    <p  style="text-align: center; font-size: 15px"> Booked VIP: {{ ticket.buyVIP }}</p>
+    <p  style="text-align: center; font-size: 15px"> Booked Waiting Room: {{ ticket.buyWaitRoom }}</p>
+    <p  style="text-align: center; font-size: 15px"> Luggage: {{ ticket.buyAddLuggage }}</p>
+    <p  style="text-align: center; font-size: 15px"> Food: {{ ticket.buyFood }}</p>
+    <p  style="text-align: center; font-size: 15px"> Price: {{ ticket.price }}</p>
+    <p  style="text-align: center; font-size: 15px"> Date of booking: {{ ticket.createdDate }}</p>
+            
+                
+               
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+    
+</body>
+
+
+{% endblock %}

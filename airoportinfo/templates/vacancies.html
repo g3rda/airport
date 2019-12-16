@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+
+{% load staticfiles %}
+
+
+
+
+<body>
+  <h2 style="font-size:50px; text-align: center">Airport vacancies</h2>
+  <p style="text-align: center"><i>In case you are interested, contact us via email</i></p>
+</div> 
+</br><div style="border-top: 1px solid #CFCFCF; padding: 2px; padding-bottom: -4px; text-align: center; border-bottom: none;">&nbsp;</div>
+
+
+<ul style="text-align: center">
+  {% for f in vacancies %}
+          <strong><span style="width: 80%; text-align: center">{{f.title}}</span></strong></br> {{f.text}}
+        </li>
+        </br>
+        </br>
+        <div style="border-top: 1px solid #CFCFCF; padding: 2px; padding-bottom: -4px; text-align: center; border-bottom: none;">&nbsp;</div>
+{% endfor %}
+</ul>
+</body>
+
+
+
+{% endblock %}

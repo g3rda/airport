@@ -1,0 +1,46 @@
+
+{% extends 'base1.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+
+{% load staticfiles %}
+
+<link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">
+  <link type="text/css" rel="stylesheet" href="{% static 'css1/style.css' %}" />
+<body>
+  <div id="booking" class="section">
+    <div class="section-center">
+      <div class="container">
+        <div class="row">
+          
+          <div class="col-md-7 col-md-offset-1">
+            <div class="booking-form">
+              <form onsubmit="window.location.replace('/');return false;">
+                
+                
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <p class="form-label" style="text-align: center"> You are booking the ticket for</p>
+                      <span class="form-label" style="text-align: center">  {{price}}  </span>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="form-btn">
+                  <button class="submit-btn">Submit</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+
+
+{% endblock %}
